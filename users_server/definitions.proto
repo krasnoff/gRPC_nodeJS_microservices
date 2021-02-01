@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service OrdersService {
+    rpc GetOrdersForCustomerID(CustomerID ) returns (OrderList ) {}
+}
+
+message OrderItem {
+    int32 orderID = 1;
+    string orderDescription = 2;
+    int32 quantity = 3;
+}
+
+message OrderList {
+    int32 customerID = 1;
+    repeated OrderItem orderItems = 2;
+}
+
+message CustomerID {
+    int32 id = 1;
+}
