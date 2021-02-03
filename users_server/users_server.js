@@ -28,9 +28,7 @@ const packageDefinition = protoLoader.loadSync(
 var hello_proto = grpc.loadPackageDefinition(packageDefinition).OnlineShop;
 
 function GetOrdersForCustomerID(call, callback) {
-    console.log(call.request, DATA);
     const query = DATA.filter(el => el.customerID === call.request.id)
-    console.log(query);
     callback(null, query[0]);
 }
 

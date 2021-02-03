@@ -28,8 +28,6 @@ function main() {
     var client = new hello_proto.OrdersService(baseaddress + ':50051',
         grpc.credentials.createInsecure());
 
-    console.log('customerID', customerID);
-    
     client.GetOrdersForCustomerID({id: customerID}, function(err, response) {
         console.log('GetOrdersForCustomerID:', response);
     });
